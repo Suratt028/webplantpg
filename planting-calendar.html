@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ปฏิทินเพาะปลูก - คลังความรู้</title>
+    <link rel="stylesheet" href="planting-calendar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Mali:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page-container">
+        <!-- ===== แถบด้านข้าง (Sidebar) ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="planting.html" class="back-link">‹ การปลูกพืช</a>
+                <h2>ปฏิทินเพาะปลูก</h2>
+            </div>
+            <div class="sidebar-plant">
+                <!-- ไอคอนปฏิทิน -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="100" height="100"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
+            </div>
+        </aside>
+
+        <!-- ===== เนื้อหาหลัก (การ์ดตามฤดูกาล) ===== -->
+        <main class="main-content">
+            <div class="calendar-grid">
+
+                <!-- การ์ดที่ 1: ฤดูร้อน (มี.ค. - มิ.ย.) -->
+                <div class="season-card" data-season="summer">
+                    <div class="season-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L5.99 4.58zm12.02 12.02c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l1.06 1.06c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41l-1.06-1.06zM18.01 4.58l-1.06 1.06c-.39.39-.39 1.02 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.39.39-1.02 0-1.41s-1.03-.39-1.41 0zM5.99 16.61l-1.06 1.06c-.39.39-.39 1.02 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.39.39-1.02 0-1.41s-1.03-.39-1.41 0z"/></svg>
+                        <h3>ฤดูร้อน</h3>
+                    </div>
+                    <div class="plant-list">
+                        <ul>
+                            <li>ฟักทอง</li>
+                            <li>มะเขือเทศ</li>
+                            <li>กุหลาบ</li>
+                            <li>ทานตะวัน</li>
+                            <li>ดาวเรือง</li>
+                            <li>มะม่วง</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- การ์ดที่ 2: ฤดูฝน (ก.ค. - ต.ค.) -->
+                <div class="season-card" data-season="rainy">
+                    <div class="season-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 18H7v-2h10v2zm-4-4H7v-2h6v2zm3-4H7V8h9v2z"/></svg>
+                        <h3>ฤดูฝน</h3>
+                    </div>
+                    <div class="plant-list">
+                        <ul>
+                            <li>ผักบุ้งจีน</li>
+                            <li>กวางตุ้ง</li>
+                            <li>คะน้า</li>
+                            <li>พริกขี้หนู</li>
+                            <li>มะเขือเปราะ</li>
+                            <li>มะลิ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- การ์ดที่ 3: ฤดูหนาว (พ.ย. - ก.พ.) -->
+                <div class="season-card" data-season="winter">
+                    <div class="season-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 11h-2V9h2v2zm-2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zM14 4h-4V2h4v2zm-6 0H4v2h4V4zm10 2H4v2h14V6zM8 2H4v2h4V2zm14 11h-2v-2h2v2zm-8-9h-2V2h2v2zm-2 8h2v2h-2v-2zm-2 2h2v2h-2v-2zm-4-2H4v2h4v-2zm0-4H4v2h4V9zm12-3h2V4h-2v2zm-2 2h2V6h-2v2zm-8 7h2v2h-2v-2z"/></svg>
+                        <h3>ฤดูหนาว</h3>
+                    </div>
+                    <div class="plant-list">
+                        <ul>
+                            <li>กะหล่ำปลี / กะหล่ำดอก</li>
+                            <li>บรอกโคลี</li>
+                            <li>แครอท</li>
+                            <li>ผักกาดขาวปลี</li>
+                            <li>โรสแมรี่</li>
+                            <li>ผักสลัดต่างๆ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- การ์ดที่ 4: ปลูกได้ตลอดปี -->
+                <div class="season-card" data-season="all-year">
+                    <div class="season-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+                        <h3>ปลูกได้ตลอดปี</h3>
+                    </div>
+                    <div class="plant-list">
+                        <ul>
+                            <li>กะเพรา</li>
+                            <li>โหระพา</li>
+                            <li>แมงลัก</li>
+                            <li>ตะไคร้</li>
+                            <li>สะระแหน่</li>
+                            <li>กล้วย</li>
+                            <li>มะละกอ, ฝรั่ง</li>
+                            <li>มะนาว</li>
+                            <li>กล้วยไม้</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

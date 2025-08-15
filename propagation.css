@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Mali:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mali', cursive;
+    background-color: #2A403A; 
+    color: #333;
+}
+
+/* ===== โครงสร้างหน้าเว็บ (ใช้ Flexbox) ===== */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== แถบด้านข้าง ===== */
+.sidebar {
+    flex: 0 0 320px;
+    background-color: #2A403A;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    background-color: #8A9A5B; 
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.sidebar-header h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.back-link {
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.back-link:hover {
+    opacity: 1;
+}
+
+
+.sidebar-plant {
+    text-align: center;
+}
+.sidebar-plant svg {
+    color: #a7c957; /* สีเขียวมะนาว */
+}
+
+/* ===== ส่วนเนื้อหาหลัก ===== */
+.main-content {
+    flex-grow: 1;
+    padding: 3rem;
+    background-color: #3b5249; 
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+/* ===== สไตล์การ์ดพลิก ===== */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px; 
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+    
+    background-color: #fdfaf5; 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 6px solid;
+}
+
+/* กำหนดสีขอบด้วย data-attribute สำหรับหน้านี้ */
+.flip-card-front[data-color="brown"], .flip-card-back[data-color="brown"] { border-color: #a56a43; }
+.flip-card-front[data-color="green"], .flip-card-back[data-color="green"] { border-color: #386641; }
+.flip-card-front[data-color="orange"], .flip-card-back[data-color="orange"] { border-color: #f28c2c; }
+.flip-card-front[data-color="purple"], .flip-card-back[data-color="purple"] { border-color: #9d4edd; }
+.flip-card-front[data-color="pink"], .flip-card-back[data-color="pink"] { border-color: #e5989b; }
+
+
+.flip-card-front img {
+    max-width: 70%;
+    max-height: 160px;
+    height: auto;
+    flex-grow: 1;
+    object-fit: contain;
+}
+
+.flip-card-front h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #3b5249;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg); 
+    justify-content: flex-start;
+}
+
+.flip-card-back h4 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2A403A;
+}
+
+.flip-card-back ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-align: left;
+    width: 90%;
+}
+
+.flip-card-back ul li {
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+/* ===== Responsive สำหรับมือถือ ===== */
+@media (max-width: 900px) {
+    .page-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 0 0 auto; 
+    }
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}

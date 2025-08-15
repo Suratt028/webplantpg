@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Mali:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mali', cursive;
+    background-color: #2A403A; 
+    color: #333;
+}
+
+/* ===== โครงสร้างหน้าเว็บ (ใช้ Flexbox) ===== */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== แถบด้านข้าง ===== */
+.sidebar {
+    flex: 0 0 320px;
+    background-color: #2A403A;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    background-color: #8A9A5B; 
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.sidebar-header h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.back-link {
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.back-link:hover {
+    opacity: 1;
+}
+
+.sidebar-plant {
+    text-align: center;
+}
+.sidebar-plant svg {
+    color: #fde4a4; /* สีเหลืองนวล */
+}
+
+/* ===== ส่วนเนื้อหาหลัก ===== */
+.main-content {
+    flex-grow: 1;
+    padding: 3rem;
+    background-color: #3b5249; 
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* ===== สไตล์การ์ดข้อมูลฤดูกาล ===== */
+.season-card {
+    background-color: #fdfaf5;
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    border: 6px solid;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.season-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px dashed;
+}
+
+.season-header svg {
+    width: 40px;
+    height: 40px;
+}
+
+.season-header h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* --- กำหนดสีตามฤดูกาล --- */
+.season-card[data-season="summer"] { border-color: #f39c12; }
+.season-card[data-season="summer"] .season-header { color: #f39c12; border-color: #f39c1244;}
+
+.season-card[data-season="rainy"] { border-color: #3498db; }
+.season-card[data-season="rainy"] .season-header { color: #3498db; border-color: #3498db44; }
+
+.season-card[data-season="winter"] { border-color: #5dade2; }
+.season-card[data-season="winter"] .season-header { color: #5dade2; border-color: #5dade244;}
+
+.season-card[data-season="all-year"] { border-color: #27ae60; }
+.season-card[data-season="all-year"] .season-header { color: #27ae60; border-color: #27ae6044;}
+/* --- สิ้นสุดการกำหนดสี --- */
+
+.plant-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plant-list li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.plant-list li::before {
+    content: '🌱';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1rem;
+}
+
+
+/* ===== Responsive สำหรับมือถือ ===== */
+@media (max-width: 900px) {
+    .page-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 0 0 auto; 
+    }
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+}

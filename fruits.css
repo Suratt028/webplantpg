@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Mali:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mali', cursive;
+    background-color: #2A403A;
+    color: #333;
+}
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 320px;
+    background-color: #2A403A;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    background-color: #F5A623; /* เปลี่ยนเป็นสีส้มสดใส */
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.sidebar-header h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.back-link {
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.back-link:hover {
+    opacity: 1;
+}
+
+
+.sidebar-plant {
+    text-align: center;
+}
+.sidebar-plant svg {
+    width: 100px;
+    height: 100px;
+    color: #F5A623; /* เปลี่ยนเป็นสีส้มสดใส */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 3rem;
+    background-color: #2A403A;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.flip-card-front {
+    border: 6px solid;
+}
+/* ===== สีใหม่สำหรับธีมผลไม้ ===== */
+.flip-card-front[data-color="mango-orange"] { border-color: #ff8c00; }
+.flip-card-front[data-color="banana-yellow"] { border-color: #f1c40f; }
+.flip-card-front[data-color="papaya-orange"] { border-color: #e67e22; }
+.flip-card-front[data-color="lime-green"] { border-color: #a2c11c; }
+.flip-card-front[data-color="guava-green"] { border-color: #78a22f; }
+
+.flip-card-front img {
+    max-width: 80%;
+    height: auto;
+    flex-grow: 1;
+    object-fit: contain;
+}
+
+.flip-card-front h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    justify-content: flex-start;
+    border: 6px solid #555;
+}
+
+/* ===== กำหนดสีขอบด้านหลังให้เข้ากับด้านหน้า ===== */
+.flip-card-back[data-color="mango-orange"] { border-color: #ff8c00; }
+.flip-card-back[data-color="banana-yellow"] { border-color: #f1c40f; }
+.flip-card-back[data-color="papaya-orange"] { border-color: #e67e22; }
+.flip-card-back[data-color="lime-green"] { border-color: #a2c11c; }
+.flip-card-back[data-color="guava-green"] { border-color: #78a22f; }
+
+.flip-card-back h4 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2A403A;
+}
+
+.flip-card-back ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-align: left;
+    width: 90%;
+}
+
+.flip-card-back ul li {
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+    .page-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 0 0 auto;
+    }
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}

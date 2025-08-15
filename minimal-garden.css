@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #f8f9fa; /* สีพื้นหลังขาวอมเทาอ่อนๆ */
+    color: #343a40; /* สีตัวอักษรเทาเข้ม */
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ===== ส่วนหัว ===== */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    color: #6c757d;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #007bff;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+/* ===== รูปภาพหลัก ===== */
+.hero-image {
+    margin-bottom: 3rem;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ส่วนเนื้อหา ===== */
+.content-section {
+    margin-bottom: 3.5rem;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #212529;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== แกลเลอรี ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* ทำให้รูปภาพมีขนาดเท่ากันสวยงาม */
+}
+
+.gallery-caption {
+    padding: 1rem 1.2rem;
+}
+
+.gallery-caption h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #212529;
+}
+
+.gallery-caption p {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* ===== รายการพรรณไม้ ===== */
+.plant-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.plant-list li {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    padding-left: 25px;
+}
+
+.plant-list li::before {
+    content: '›'; /* ใช้สัญลักษณ์แทน bullet */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* ===== ส่วนท้าย ===== */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+    color: #6c757d;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===== Responsive สำหรับมือถือ ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.8rem;
+    }
+}

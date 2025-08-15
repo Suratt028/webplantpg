@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Mali:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mali', cursive; /* ใช้ฟอนต์น่ารักๆ เป็นหลัก */
+    background-color: #2A403A; /* สีพื้นหลังเขียวเข้ม */
+    color: #333;
+}
+
+/* ===== โครงสร้างหน้าเว็บ (ใช้ Flexbox) ===== */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== แถบด้านข้าง ===== */
+.sidebar {
+    flex: 0 0 320px; /* กำหนดความกว้าง sidebar คงที่ */
+    background-color: #2A403A;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    background-color: #C38393; /* เปลี่ยนเป็นสีชมพูอ่อน */
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    /* หัวใจสำคัญ: การตัดขอบให้เป็นรูปทรงเรขาคณิต */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.sidebar-header h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.back-link {
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.back-link:hover {
+    opacity: 1;
+}
+
+
+.sidebar-plant {
+    text-align: center;
+}
+.sidebar-plant svg {
+    width: 100px;
+    height: 100px;
+    color: #C38393; /* เปลี่ยนเป็นสีชมพูอ่อน */
+}
+
+/* ===== ส่วนเนื้อหาหลัก ===== */
+.main-content {
+    flex-grow: 1; /* ให้เนื้อหาหลักขยายเต็มพื้นที่ที่เหลือ */
+    padding: 3rem;
+    background-color: #2A403A;
+}
+
+.card-grid {
+    display: grid;
+    /* สร้าง Grid ที่ปรับจำนวนคอลัมน์อัตโนมัติ */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+/* ===== สไตล์การ์ดพลิก ===== */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px; /* เพิ่มมิติ 3D */
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* เมื่อเอาเมาส์ชี้ ให้หมุนการ์ด */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* สำหรับ Safari */
+    backface-visibility: hidden;
+    
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.flip-card-front {
+    /* ใช้ data-attribute เพื่อกำหนดสีขอบ */
+    border: 6px solid;
+}
+/* ===== เพิ่มสีใหม่สำหรับธีมดอกไม้ ===== */
+.flip-card-front[data-color="pink"] { border-color: #e84393; }
+.flip-card-front[data-color="yellow"] { border-color: #f1c40f; }
+.flip-card-front[data-color="white"] { border-color: #bdc3c7; }
+.flip-card-front[data-color="purple"] { border-color: #8e44ad; }
+.flip-card-front[data-color="orange"] { border-color: #f39c12; }
+
+
+.flip-card-front img {
+    max-width: 80%;
+    height: auto;
+    flex-grow: 1;
+    object-fit: contain;
+}
+
+.flip-card-front h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg); /* หมุนด้านหลังไปไว้ข้างหลังก่อน */
+    justify-content: flex-start;
+    border: 6px solid #555;
+}
+
+/* ===== กำหนดสีขอบด้านหลังให้เข้ากับด้านหน้า ===== */
+.flip-card-back[data-color="pink"] { border-color: #e84393; }
+.flip-card-back[data-color="yellow"] { border-color: #f1c40f; }
+.flip-card-back[data-color="white"] { border-color: #bdc3c7; }
+.flip-card-back[data-color="purple"] { border-color: #8e44ad; }
+.flip-card-back[data-color="orange"] { border-color: #f39c12; }
+
+
+.flip-card-back h4 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2A403A;
+}
+
+.flip-card-back ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-align: left;
+    width: 90%;
+}
+
+.flip-card-back ul li {
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+/* ===== Responsive สำหรับมือถือ ===== */
+@media (max-width: 900px) {
+    .page-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 0 0 auto; /* ให้ความสูงพอดีกับเนื้อหา */
+    }
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}

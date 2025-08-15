@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การกำจัดวัชพืช - การดูแลรักษา</title>
+    <!-- ลิงก์ไปยัง weeds.css -->
+    <link rel="stylesheet" href="weeds.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Mali:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page-container">
+        <!-- ===== แถบด้านข้าง (Sidebar) ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <!-- ลิงก์ย้อนกลับไปหน้า maintenance.html -->
+                <a href="maintenance.html" class="back-link">‹ การดูแลรักษา</a>
+                <h2>การกำจัด<br>วัชพืช</h2>
+            </div>
+            <div class="sidebar-plant">
+                <!-- ไอคอนจอบ/เสียม -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.9,2.4c-0.1-0.1-0.2-0.2-0.3-0.2c-0.1,0-0.2,0-0.3-0.1c-0.1,0-0.2,0-0.3,0c-0.1,0-0.2,0-0.3,0.1c-0.1,0-0.2,0.1-0.3,0.1 l-1,0.6c-0.1,0-0.2,0.1-0.2,0.2c0,0.1,0,0.2,0.1,0.3l3.2,5.6c0.1,0.1,0.2,0.2,0.3,0.2c0.1,0,0.2,0,0.3-0.1l1-0.6 c0.1,0,0.2-0.1,0.2-0.2c0-0.1,0-0.2-0.1-0.3L19.9,2.4z M4.1,10.1l-2.7,4.7c-0.2,0.4-0.1,0.9,0.3,1.1l2.5,1.4c0.4,0.2,0.9,0.1,1.1-0.3 l2.7-4.7L4.1,10.1z M18.1,4.7l-3.2-1.8L3.5,14.2l-1,1.7c-0.6,1,0,2.4,1.2,3l2.5,1.4c1.2,0.7,2.7,0.1,3.2-1.1l1-1.7l8-8L18.1,4.7z"/></svg>
+            </div>
+        </aside>
+
+        <!-- ===== เนื้อหาหลัก (การ์ดความรู้) ===== -->
+        <main class="main-content">
+            <div class="card-grid">
+
+                <!-- การ์ดที่ 1: ทำไมต้องกำจัด? -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" data-color="red">
+                            <img src="image/Remove.png" alt="ทำไมต้องกำจัดวัชพืช">
+                            <h3>Why Remove?</h3>
+                        </div>
+                        <div class="flip-card-back" data-color="red">
+                            <h4>ทำไมต้องกำจัด?</h4>
+                            <ul>
+                                <li><strong>แย่งอาหาร:</strong> วัชพืชแย่งปุ๋ยและธาตุอาหารในดินจากพืชหลัก</li>
+                                <li><strong>แย่งน้ำ:</strong> แย่งความชื้นในดิน ทำให้พืชที่เราปลูกขาดน้ำ</li>
+                                <li><strong>แย่งแสง:</strong> วัชพืชที่โตเร็วกว่าจะบดบังแสงแดด</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- การ์ดที่ 2: การใช้มือถอน -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" data-color="green">
+                            <img src="image/Hand-Pulling.png" alt="การใช้มือถอน">
+                            <h3>Hand Pulling</h3>
+                        </div>
+                            <div class="flip-card-back" data-color="green">
+                            <h4>การใช้มือถอน</h4>
+                            <ul>
+                                <li><strong>ข้อดี:</strong> ง่าย, ไม่ต้องใช้อุปกรณ์, ได้ผลดีกับวัชพืชต้นเล็กๆ</li>
+                                <li><strong>เทคนิค:</strong> ควรรดน้ำให้ดินชุ่มก่อนถอน จะช่วยให้ถอนรากออกได้ง่ายขึ้น</li>
+                                <li><strong>ข้อควรทำ:</strong> ถอนให้ถึงรากถึงโคน เพื่อไม่ให้มันงอกกลับมาใหม่</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- การ์ดที่ 3: การใช้เครื่องมือ -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" data-color="grey">
+                            <img src="image/Using-Tools.png" alt="การใช้เครื่องมือ">
+                            <h3>Using Tools</h3>
+                        </div>
+                        <div class="flip-card-back" data-color="grey">
+                            <h4>การใช้เครื่องมือ</h4>
+                            <ul>
+                                <li><strong>จอบ/เสียม:</strong> ใช้ถากหน้าดินเพื่อตัดต้นวัชพืช เหมาะกับพื้นที่โล่ง</li>
+                                <li><strong>ส้อมพรวน:</strong> ใช้ขุดแซะวัชพืชที่มีรากลึก เช่น หญ้าแห้วหมู</li>
+                                <li><strong>กรรไกรตัดหญ้า:</strong> ใช้ตัดวัชพืชคลุมดิน แต่รากยังคงอยู่</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- การ์ดที่ 4: การคลุมดิน -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" data-color="brown">
+                                <img src="image/Mulching.jpg" alt="การคลุมดิน">
+                            <h3>Mulching</h3>
+                        </div>
+                        <div class="flip-card-back" data-color="brown">
+                            <h4>การคลุมดิน</h4>
+                            <ul>
+                                <li><strong>คือ:</strong> การนำวัสดุต่างๆ มาคลุมหน้าดินเพื่อป้องกันวัชพืช</li>
+                                <li><strong>วิธีทำ:</strong> คลุมดินรอบโคนต้นด้วยฟาง, แกลบ, ใบไม้แห้ง, หรือพลาสติกคลุมดิน</li>
+                                <li><strong>ข้อดี:</strong> ป้องกันแสงแดดไม่ให้ส่องถึงดิน ทำให้เมล็ดวัชพืชงอกไม่ได้ และยังช่วยรักษาความชื้นในดิน</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- การ์ดที่ 5: สารกำจัดจากธรรมชาติ -->
+                    <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" data-color="yellow">
+                                <img src="image/Natural-Spray.png" alt="สารกำจัดจากธรรมชาติ">
+                            <h3>Natural Spray</h3>
+                        </div>
+                        <div class="flip-card-back" data-color="yellow">
+                            <h4>สารกำจัดจากธรรมชาติ</h4>
+                            <ul>
+                                <li><strong>น้ำส้มสายชู:</strong> มีฤทธิ์เป็นกรด ทำให้ใบวัชพืชไหม้ (ห้ามโดนพืชหลัก)</li>
+                                <li><strong>น้ำร้อน:</strong> การราดน้ำเดือดจะทำลายเซลล์ของวัชพืชได้ทันที</li>
+                                <li><strong>เกลือ:</strong> ผสมเกลือกับน้ำแล้วฉีดพ่น (ระวัง! ทำให้ดินเค็ม พืชอื่นอาจตายได้)</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
