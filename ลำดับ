@@ -12,26 +12,22 @@ folder plantpg
              !
           knowledge
                 file html+css
-                     -knowledge 
                      -vegetables
                      -flowers
                      -fruits
                      -herbs
           planting
-                filehtml+css
-                    -planting 
-                     -flowers
-                     -fruits
-                     -herbs
+                file html+css
+                     -soil-preparation 
+                     -propagation
+                     -planting-calendar
           maintenance
                 filehtml+css
-                    -planting 
                      -watering
                      -pets
                      -weeds
           garden-ideas
-                filehtml+css
-                    -planting 
+                file html+css
                      -minimal-garden
                      -english-garden
                      -vertical-garden
